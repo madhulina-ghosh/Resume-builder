@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Resume Builder</title>
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+   
+<div class="container">
+
+   <div id="form" class="form">
+
+      <h3>fill resume info</h3>
+
+      <div class="box">
+         <p>name</p>
+         <input type="text" id="name" maxlength="40" placeholder="Enter your full name...">
+      </div>
+
+      <div class="box">
+         <p>number</p>
+         <input type="number" id="phone" placeholder="+91-0123456789" oninput="if(this.value.length > 15) this.value = this.value.slice(0, 15)">
+      </div>
+
+      <div class="box">
+         <p>email</p>
+         <input type="email" id="email" maxlength="50" placeholder="example@gmail.com">
+      </div>
+
+      <div class="box">
+         <p>address</p>
+         <input type="text" id="address" maxlength="50" placeholder="locality, city, state">
+      </div>
+      <div class="box">
+         <p> social-links </p>
+         <input type="text" id="social-links" maxlength="50" placeholder="example:linkedin.com/in/yourname">
+      </div>
+
+      <div class="box">
+         <p>profile</p>
+         <input type="file" id="photo" accept="image/*">
+      </div>
+
+      <div class="box">
+         <p>objective</p>
+         <textarea id="objective" maxlength="250" rows="3" placeholder="Write your career objective..."></textarea>
+      </div>
+
+      <div class="box">
+         <p>education</p>
+         <textarea id="education" maxlength="300" rows="3" placeholder="Degree / College / Year"></textarea>
+      </div>
+
+      <div class="box">
+         <p>skills (upto 5)</p>
+         <input type="text" max="40" placeholder="add a skill..." id="skill-input">
+         <button type="button" id="add-skill" class="btn">add</button>
+         <ul id="skill-list"></ul>
+      </div>
+
+      <div class="box">
+         <p>interests</p>
+         <textarea id="interests" maxlength="350" rows="3" placeholder="coding/problem solving/drawing"></textarea>
+      </div>
+
+      <div class="box">
+         <p>languages</p>
+         <input type="text" id="languages" maxlength="100" placeholder="Comma seperated">
+      </div>
+
+      <div class="box">
+         <p>projects (upto 5)</p>
+         <input type="text" max="40" placeholder="add a project..." id="project-input">
+         <button type="button" id="add-project" class="btn">add</button>
+         <ul id="project-list"></ul>
+      </div>
+
+      <button type="button" id="downloadPdf" class="btn">download PDF</button>
+
+   </div>
+
+   <div id="resume" class="preview">
+
+      <div class="resume-header">
+         <div>
+            <h3 id="preview-name">Your name</h3>
+            <p><i class="fas fa-phone"></i> <span id="preview-phone">your number</span></p>
+            <p><i class="fas fa-envelope"></i> <span id="preview-email">your email</span></p>
+            <p><i class="fas fa-map-marker-alt"></i> <span id="preview-address">your address</span></p>
+            <p><i class="fab fa-linkedin"></i><span id="preview-social-links">linkedin.com/in/yourname</span></p>
+         </div>
+         <div id="preview-photo" class="photo"></div>
+      </div>
+
+      <div class="box">
+         <h3>objective</h3>
+         <p id="preview-objective">your career objective goes here...</p>
+      </div>
+
+      <div class="box">
+         <h3>education</h3>
+         <p id="preview-education">your education details...</p>
+      </div>
+
+      <div class="box">
+         <h3>skills</h3>
+         <ul id="preview-skills">your skills...</ul>
+      </div>
+
+      <div class="box">
+         <h3>interests</h3>
+         <p id="preview-interests">areas of interests...</p>
+      </div>
+
+      <div class="box">
+         <h3>languages</h3>
+         <p id="preview-languages">English, Hindi...</p>
+      </div>
+
+      <div class="box">
+         <h3>projects</h3>
+         <ul id="preview-projects">your projects...</ul>
+      </div>
+
+   </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom pdf convertor link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.12.1/html2pdf.bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
