@@ -227,64 +227,59 @@ body{
 }
 
 /* ============================= */
-/* MOBILE RESPONSIVE FIX */
+/* MOBILE FIX: NO HORIZONTAL OR VERTICAL SCROLL */
 /* ============================= */
 @media (max-width: 600px) {
-
-   /* Prevent horizontal scroll */
-   body, .container {
-      overflow-x: hidden;
-   }
-
-   /* Stack form and preview vertically */
-   .container {
-      flex-direction: column;
-      gap: 2rem;
-      padding: 2rem 1rem;
-      align-items: center;
-   }
-
-   /* Form full width */
-   .form {
+   html, body {
       width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden; /* prevent both horizontal and vertical scroll */
    }
 
-   /* Shrink headings and inputs for mobile */
-   .form h3 {
-      font-size: 2.4rem;
-   }
-
-   .form input, .form textarea, .form .btn {
-      font-size: 1.6rem;
+   .container {
+      flex-direction: column; /* stack form and preview */
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      gap: 1rem;
       padding: 1rem;
    }
 
-   .form ul li {
-      font-size: 1.6rem;
-      padding: 0.5rem 1rem;
-   }
-
-   /* Resume preview full width */
-   .preview {
-      width: 100%;
+   .form, .preview {
+      width: 100%; /* fit screen width */
       max-width: 100%;
-      padding: 1.5rem;
+      height: auto; /* allow content to shrink naturally */
+      overflow: hidden; /* no scroll inside boxes */
    }
 
-   .preview .resume-header .photo {
-      height: 10rem;
-      width: 10rem;
-   }
-
-   .preview .resume-header h3 {
+   /* Shrink headings and inputs for mobile */
+   .form h3, .preview .resume-header h3 {
       font-size: 2rem;
    }
 
-   .preview .resume-header p {
-      font-size: 1.6rem;
+   .form input, .form textarea, .form .btn {
+      font-size: 1.5rem;
+      padding: 0.8rem;
    }
 
-   /* Ensure all inner elements do not overflow */
+   /* Resize preview photo */
+   .preview .resume-header .photo {
+      height: 8rem;
+      width: 8rem;
+   }
+
+   /* Adjust text in preview */
+   .preview .resume-header p,
+   .preview .box ul,
+   .preview .box p {
+      font-size: 1.4rem;
+      line-height: 1.4;
+   }
+
+   /* Make sure nothing overflows */
    .preview * {
       max-width: 100%;
       box-sizing: border-box;
